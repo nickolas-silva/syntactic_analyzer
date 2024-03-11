@@ -65,7 +65,8 @@ extern int yydebug;
     KEYWORD_EQUIVALENTTO = 266,    /* KEYWORD_EQUIVALENTTO  */
     ABRE_CHAVE = 267,              /* ABRE_CHAVE  */
     FECHA_CHAVE = 268,             /* FECHA_CHAVE  */
-    VIRGULA = 269                  /* VIRGULA  */
+    VIRGULA = 269,                 /* VIRGULA  */
+    KEYWORD_OR = 270               /* KEYWORD_OR  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

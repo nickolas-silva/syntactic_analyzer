@@ -47,8 +47,7 @@ individuo       {id}({numero}+)
 {max} |       
 {exactly} |    
 {that} |        
-{not} |      
-{or} |       
+{not} |           
 {and}         return KEYWORD;
 {id}          return CLASS;
 {prop}        return PROP;
@@ -63,5 +62,6 @@ individuo       {id}({numero}+)
 {individuo}   return INDIVIDUAL;
 "Class:"      return KEYWORD_CLASS;
 "EquivalentTo:" return KEYWORD_EQUIVALENTTO;
+"or"          return KEYWORD_OR;  
 
 %%

@@ -8,7 +8,7 @@ void yyerror(const char *);
 %}
 
 %token CLASS KEYWORD PROP NUM SYMBOL TYPE INDIVIDUAL KEYWORD_CLASS KEYWORD_EQUIVALENTTO ABRE_CHAVE FECHA_CHAVE VIRGULA
-
+		KEYWORD_OR
 %%
 
 stmnt: stmnt class
@@ -19,12 +19,18 @@ class: class KEYWORD_CLASS CLASS body
 	 | KEYWORD_CLASS CLASS body
      ;
 
-body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE
+body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE // classe enumerada
+	| KEYWORD_EQUIVALENTTO coberta
     ;
 
 enumeraveis: enumeraveis VIRGULA enumeraveis
         | CLASS
         ;
+
+coberta: coberta KEYWORD_OR coberta
+		| CLASS 
+		;
+
 
 %%
 
