@@ -63,5 +63,8 @@ individuo       {id}({numero}+)
 {individuo}   return INDIVIDUAL;
 "Class:"      return KEYWORD_CLASS;
 "EquivalentTo:" return KEYWORD_EQUIVALENTTO;
+"SubClassOf:" return KEYWORD_SUBCLASSOF;
+"DisjointClasses:" return KEYWORD_DISJOINTCLASSES;
+"Individuals:" return KEYWORD_INDIVIDUALS;
 
 %%

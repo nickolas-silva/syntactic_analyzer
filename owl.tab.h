@@ -63,9 +63,12 @@ extern int yydebug;
     INDIVIDUAL = 264,              /* INDIVIDUAL  */
     KEYWORD_CLASS = 265,           /* KEYWORD_CLASS  */
     KEYWORD_EQUIVALENTTO = 266,    /* KEYWORD_EQUIVALENTTO  */
-    ABRE_CHAVE = 267,              /* ABRE_CHAVE  */
-    FECHA_CHAVE = 268,             /* FECHA_CHAVE  */
-    VIRGULA = 269                  /* VIRGULA  */
+    KEYWORD_SUBCLASSOF = 267,      /* KEYWORD_SUBCLASSOF  */
+    KEYWORD_DISJOINTCLASSES = 268, /* KEYWORD_DISJOINTCLASSES  */
+    KEYWORD_INDIVIDUALS = 269,     /* KEYWORD_INDIVIDUALS  */
+    ABRE_CHAVE = 270,              /* ABRE_CHAVE  */
+    FECHA_CHAVE = 271,             /* FECHA_CHAVE  */
+    VIRGULA = 272                  /* VIRGULA  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
