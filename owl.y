@@ -7,8 +7,8 @@ int yyparse(void);
 void yyerror(const char *);
 %}
 
-%token CLASS KEYWORD PROP NUM SYMBOL TYPE INDIVIDUAL KEYWORD_CLASS KEYWORD_EQUIVALENTTO ABRE_CHAVE FECHA_CHAVE VIRGULA
-		KEYWORD_OR
+%token CLASS KEYWORD PROP NUM SYMBOL TYPE INDIVIDUAL KEYWORD_CLASS KEYWORD_EQUIVALENTTO KEYWORD_SUBCLASSOF KEYWORD_DISJOINTCLASSES KEYWORD_INDIVIDUALS ABRE_CHAVE FECHA_CHAVE VIRGULA
+
 %%
 
 stmnt: stmnt class
@@ -19,17 +19,27 @@ class: class KEYWORD_CLASS CLASS body
 	 | KEYWORD_CLASS CLASS body
      ;
 
-body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE // classe enumerada
-	| KEYWORD_EQUIVALENTTO coberta
+body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE
+	 | KEYWORD_SUBCLASSOF body_subclass KEYWORD_DISJOINTCLASSES acept_class KEYWORD_INDIVIDUALS acept_individual	//Classe Primitiva
     ;
+
+body_subclass: PROP KEYWORD CLASS VIRGULA body_subclass
+	 | PROP KEYWORD TYPE
+	 | PROP KEYWORD CLASS
+	 ;
+
+acept_class: CLASS VIRGULA acept_class
+	 | CLASS
+	 ;
+
+acept_individual: INDIVIDUAL VIRGULA acept_individual
+	 | INDIVIDUAL
+	 ;
 
 enumeraveis: enumeraveis VIRGULA enumeraveis
         | CLASS
         ;
 
-coberta: coberta KEYWORD_OR coberta
-		| CLASS 
-		;
 
 
 %%
