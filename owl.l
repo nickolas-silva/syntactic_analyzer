@@ -47,7 +47,8 @@ individuo       {id}({numero}+)
 {max} |       
 {exactly} |    
 {that} |        
-{not} |           
+{not} |
+{or} |          
 {and}         return KEYWORD;
 {id}          return CLASS;
 {prop}        return PROP;
