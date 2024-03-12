@@ -68,7 +68,11 @@ extern int yydebug;
     KEYWORD_INDIVIDUALS = 269,     /* KEYWORD_INDIVIDUALS  */
     ABRE_CHAVE = 270,              /* ABRE_CHAVE  */
     FECHA_CHAVE = 271,             /* FECHA_CHAVE  */
-    VIRGULA = 272                  /* VIRGULA  */
+    ABRE_COLCHETES = 272,          /* ABRE_COLCHETES  */
+    FECHA_COLCHETES = 273,         /* FECHA_COLCHETES  */
+    VIRGULA = 274,                 /* VIRGULA  */
+    ABRE_PARENTESES = 275,         /* ABRE_PARENTESES  */
+    FECHA_PARENTESES = 276         /* FECHA_PARENTESES  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

@@ -56,6 +56,10 @@ individuo       {id}({numero}+)
 {operators}   return SYMBOL;
 "{"           return ABRE_CHAVE;
 "}"           return FECHA_CHAVE;
+"("           return ABRE_PARENTESES;
+")"           return FECHA_PARENTESES;
+"["           return ABRE_COLCHETES;
+"]"           return FECHA_COLCHETES;
 ","           return VIRGULA;
 \"            return SYMBOL;
 {integer}     return TYPE;
