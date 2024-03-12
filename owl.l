@@ -20,6 +20,7 @@ minusculas_sem_s [abcdefghijklmnopqrtuvxyz]
 
 some "SOME"|"some"
 value "VALUE"|"value"
+only "ONLY"|"only"
 all "ALL"|"all"
 min "MIN"|"min"
 max "MAX"|"max"
@@ -44,7 +45,8 @@ individuo       {id}({numero}+)
 {value} |      
 {all} |     
 {min} |        
-{max} |       
+{max} | 
+{only} |      
 {exactly} |    
 {that} |        
 {not} |

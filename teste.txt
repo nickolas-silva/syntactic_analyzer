@@ -1,2 +1,6 @@
-Class: Spiciness
-EquivalentTo: Hot or Medium
+Class: MargheritaPizza
+SubClassOf:
+NamedPizza,
+hasTopping some MozzarellaTopping,
+hasTopping some TomatoTopping,
+hasTopping only (MozzarellaTopping or TomatoTopping)
