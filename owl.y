@@ -7,7 +7,7 @@ int yyparse(void);
 void yyerror(const char *);
 %}
 
-%token CLASS KEYWORD PROP NUM SYMBOL TYPE INDIVIDUAL KEYWORD_CLASS KEYWORD_EQUIVALENTTO KEYWORD_SUBCLASSOF KEYWORD_DISJOINTCLASSES KEYWORD_INDIVIDUALS ABRE_CHAVE FECHA_CHAVE ABRE_COLCHETES FECHA_COLCHETES VIRGULA ABRE_PARENTESES FECHA_PARENTESES
+%token CLASS KEYWORD PROP NUM SYMBOL TYPE INDIVIDUAL KEYWORD_CLASS KEYWORD_EQUIVALENTTO KEYWORD_SUBCLASSOF KEYWORD_DISJOINTCLASSES KEYWORD_INDIVIDUALS ABRE_CHAVE FECHA_CHAVE ABRE_COLCHETES FECHA_COLCHETES VIRGULA ABRE_PARENTESES FECHA_PARENTESES KEYWORD_AND
 
 
 %%
@@ -23,7 +23,8 @@ class: class KEYWORD_CLASS CLASS body
 body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE
 	 | KEYWORD_SUBCLASSOF body_prop KEYWORD_DISJOINTCLASSES acept_class KEYWORD_INDIVIDUALS acept_individual	//Classe Primitiva
 	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD ABRE_PARENTESES body_prop FECHA_PARENTESES KEYWORD_INDIVIDUALS acept_individual KEYWORD_CLASS CLASS KEYWORD_EQUIVALENTTO  CLASS KEYWORD ABRE_PARENTESES body_prop param FECHA_PARENTESES		//Classe Definida
-    ;
+	 | KEYWORD_EQUIVALENTTO CLASS aninhada
+	;
 
 param:  ABRE_COLCHETES SYMBOL NUM FECHA_COLCHETES
 
@@ -43,6 +44,8 @@ acept_individual: INDIVIDUAL VIRGULA acept_individual
 enumeraveis: enumeraveis VIRGULA enumeraveis
         | CLASS
         ;
+	
+aninhada: aninhada 
 
 
 
@@ -58,20 +61,19 @@ int main(int argc, char ** argv)
 		file = fopen(argv[1], "r");
 		if (!file)
 		{
-			cout << "Arquivo " << argv[1] << " não encontrado!\n";
 			exit(1);
 		}
-		
 		yyin = file;
 	}
 
-	yyparse();
+	if(yyparse()==0){
+		cout << "Compilado com sucesso";
+	}
 }
 
 void yyerror(const char * s)
 {
 	extern int yylineno;    
 	extern char * yytext;   
-
     cout << "Erro sintático: símbolo \"" << yytext << "\" (linha " << yylineno << ")\n";
 }

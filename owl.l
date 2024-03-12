@@ -69,5 +69,6 @@ individuo       {id}({numero}+)
 "SubClassOf:" return KEYWORD_SUBCLASSOF;
 "DisjointClasses:" return KEYWORD_DISJOINTCLASSES;
 "Individuals:" return KEYWORD_INDIVIDUALS;
+"and"         return KEYWORD_AND;
 
 %%

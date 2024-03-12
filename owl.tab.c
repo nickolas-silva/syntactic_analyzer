@@ -1328,6 +1328,7 @@ int main(int argc, char ** argv)
 	}
 
 	yyparse();
+	//cout << "Compilado com Sucesso";
 }
 
 void yyerror(const char * s)

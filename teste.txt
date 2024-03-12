@@ -2,7 +2,7 @@ Class: CheesyPizza
 EquivalentTo:
 Pizza and (hasTopping some CheeseTopping)
 Individuals:
-CheesyPizza1
+CheesyPizza
 Class: HighCaloriePizza
 EquivalentTo:
 Pizza and (hasCaloricContent some xsd:integer[>= 400])
