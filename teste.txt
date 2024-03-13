@@ -1,6 +1,6 @@
-Class: MargheritaPizza
-SubClassOf:
-NamedPizza,
-hasTopping some MozzarellaTopping,
-hasTopping some TomatoTopping,
-hasTopping only (MozzarellaTopping or TomatoTopping)
+Class: RegularotyActivity
+EquivalentTo: ValueActivity
+and ((bundles some (CnAObject or CoreObject or PoPObject)) or (cosumes some CounterObject))
+and ((grants some CnAObject)) or
+(transfers some (CoreObject or PoPObject))
+

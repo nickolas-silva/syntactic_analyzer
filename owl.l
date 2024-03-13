@@ -41,12 +41,12 @@ individuo       {id}({numero}+)
 
 %%
 [\t\n]+ ;
-{some} |        
+{some} |
+{only}       return QUANTIFIER;      
 {value} |      
 {all} |     
 {min} |        
 {max} | 
-{only} |      
 {exactly} |    
 {that} |        
 {not} |
