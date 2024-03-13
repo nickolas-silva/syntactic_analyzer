@@ -20,17 +20,25 @@ class: class KEYWORD_CLASS CLASS body
 	 | KEYWORD_CLASS CLASS body
      ;
 
-body: KEYWORD_EQUIVALENTTO ABRE_CHAVE enumeraveis FECHA_CHAVE
+body: KEYWORD_EQUIVALENTTO ABRE_CHAVE acept_individual FECHA_CHAVE
 	 | KEYWORD_SUBCLASSOF body_prop KEYWORD_DISJOINTCLASSES acept_class KEYWORD_INDIVIDUALS acept_individual	//Classe Primitiva
 	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD ABRE_PARENTESES body_prop FECHA_PARENTESES KEYWORD_INDIVIDUALS acept_individual KEYWORD_CLASS CLASS KEYWORD_EQUIVALENTTO  CLASS KEYWORD ABRE_PARENTESES body_prop param FECHA_PARENTESES		//Classe Definida
-	 | KEYWORD_EQUIVALENTTO CLASS aninhada
-	;
+	 | KEYWORD_EQUIVALENTTO class_or_class		//Classe Coberta
+	 | KEYWORD_SUBCLASSOF CLASS VIRGULA body_prop	//Axioma de fechamento
+	 | KEYWORD_EQUIVALENTTO CLASS 
+    ;
+
+class_or_class: CLASS KEYWORD class_or_class
+	 | CLASS
+	 ;
 
 param:  ABRE_COLCHETES SYMBOL NUM FECHA_COLCHETES
 
 body_prop: PROP KEYWORD CLASS VIRGULA body_prop
 	 | PROP KEYWORD TYPE
 	 | PROP KEYWORD CLASS
+	 | PROP KEYWORD ABRE_PARENTESES class_or_class FECHA_PARENTESES VIRGULA
+	 | PROP KEYWORD ABRE_PARENTESES class_or_class FECHA_PARENTESES
 	 ;
 
 acept_class: CLASS VIRGULA acept_class
@@ -41,14 +49,11 @@ acept_individual: INDIVIDUAL VIRGULA acept_individual
 	 | INDIVIDUAL
 	 ;
 
-enumeraveis: enumeraveis VIRGULA enumeraveis
-        | CLASS
-        ;
-	
-aninhada: aninhada 
+aninhadas: aninhadas KEYWORD_AND obj_aninhavel
+		| KEYWORD_AND obj_aninhavel
+		;
 
-
-
+obj_aninhavel: ABRE_PARENTESES PROP  
 %%
 
 extern FILE * yyin;  

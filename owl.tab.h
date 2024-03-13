@@ -72,7 +72,8 @@ extern int yydebug;
     FECHA_COLCHETES = 273,         /* FECHA_COLCHETES  */
     VIRGULA = 274,                 /* VIRGULA  */
     ABRE_PARENTESES = 275,         /* ABRE_PARENTESES  */
-    FECHA_PARENTESES = 276         /* FECHA_PARENTESES  */
+    FECHA_PARENTESES = 276,        /* FECHA_PARENTESES  */
+    KEYWORD_AND = 277              /* KEYWORD_AND  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

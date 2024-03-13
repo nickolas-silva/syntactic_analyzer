@@ -1,8 +1,6 @@
-Class: CheesyPizza
-EquivalentTo:
-Pizza and (hasTopping some CheeseTopping)
-Individuals:
-CheesyPizza
-Class: HighCaloriePizza
-EquivalentTo:
-Pizza and (hasCaloricContent some xsd:integer[>= 400])
+Class: MargheritaPizza
+SubClassOf:
+NamedPizza,
+hasTopping some MozzarellaTopping,
+hasTopping some TomatoTopping,
+hasTopping only (MozzarellaTopping or TomatoTopping)
