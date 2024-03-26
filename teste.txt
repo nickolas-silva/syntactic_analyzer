@@ -2,5 +2,11 @@ Class: MargheritaPizza
 SubClassOf:
 NamedPizza,
 hasTopping some MozzarellaTopping,
-hasTopping some TomatoTopping,
+hasTopping som TomatoTopping,
 hasTopping only (MozzarellaTopping or TomatoTopping)
+
+Class: CheesyPizza
+EquivlentTo:
+Pizza and (hasTopping some CheeseTopping)
+Individuals:
+CheesyPizza1

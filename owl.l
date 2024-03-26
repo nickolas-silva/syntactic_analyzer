@@ -41,12 +41,12 @@ individuo       {id}({numero}+)
 
 %%
 [\t\n]+ ;
-{some} |        
+{some} |
+{only}       return QUANTIFIER;      
 {value} |      
 {all} |     
 {min} |        
 {max} | 
-{only} |      
 {exactly} |    
 {that} |        
 {not} |
@@ -72,6 +72,5 @@ individuo       {id}({numero}+)
 "SubClassOf:" return KEYWORD_SUBCLASSOF;
 "DisjointClasses:" return KEYWORD_DISJOINTCLASSES;
 "Individuals:" return KEYWORD_INDIVIDUALS;
-"and"         return KEYWORD_AND;
 
 %%
