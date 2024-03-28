@@ -29,6 +29,7 @@ that "THAT"|"that"
 not "NOT"|"not"
 and "AND"|"and"
 or "OR"|"or"
+inverse "INVERSE"|"inverse"
 
 integer "integer"
 namespaces ("owl"|"rdfs"|"xsd")":"({letra}+)
@@ -45,7 +46,8 @@ individuo       {id}({numero}+)
 {only}       return QUANTIFIER;      
 {value} |      
 {all} |     
-{min} |        
+{min} |
+{inverse} |        
 {max} | 
 {exactly} |    
 {that} |        
@@ -72,5 +74,6 @@ individuo       {id}({numero}+)
 "SubClassOf:" return KEYWORD_SUBCLASSOF;
 "DisjointClasses:" return KEYWORD_DISJOINTCLASSES;
 "Individuals:" return KEYWORD_INDIVIDUALS;
+"DisjointWith:" return KEYWORD_DISJOINTCLASSES;
 
 %%

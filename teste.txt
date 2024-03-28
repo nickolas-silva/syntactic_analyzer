@@ -2,11 +2,34 @@ Class: MargheritaPizza
 SubClassOf:
 NamedPizza,
 hasTopping some MozzarellaTopping,
-hasTopping som TomatoTopping,
+hasTopping some TomatoTopping,
 hasTopping only (MozzarellaTopping or TomatoTopping)
 
+Class: Spiciness
+EquivalentTo: Hot or Medium or Mild
+
 Class: CheesyPizza
-EquivlentTo:
+EquivalentTo:
 Pizza and (hasTopping some CheeseTopping)
 Individuals:
 CheesyPizza1
+
+Class: Spiciness
+EquivalentTo: {Hot1 , Medium1 , Mild1}
+
+Class: Spiciness
+EquivalentTo: Hot or Medium or Mild
+
+Class: HighCaloriePizza
+EquivalentTo:
+Pizza and (hasCaloricContent some xsd:integer[>= 400])
+
+Class: Pizza
+SubClassOf:
+asBase some PizzaBase,
+hasCaloricContent some xsd:integer
+DisjointClasses:
+Pizza, PizzaBase, PizzaTopping
+Individuals:
+CustomPizza1,
+CustomPizza2
