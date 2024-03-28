@@ -28,13 +28,13 @@ class: class KEYWORD_CLASS CLASS body
 	 | KEYWORD_CLASS CLASS body
      ;
 
-body: KEYWORD_EQUIVALENTTO ABRE_CHAVE acept_individual FECHA_CHAVE {quant_enumerada++;} //Classe Enumerada ok
-	 | KEYWORD_SUBCLASSOF body_prop {quant_primitiva++;}	//Classe Primitiva ok
+body: KEYWORD_EQUIVALENTTO ABRE_CHAVE acept_individual FECHA_CHAVE {quant_enumerada++;} //Classe Enumerada 
+	 | KEYWORD_SUBCLASSOF body_prop {quant_primitiva++;}	//Classe Primitiva
 	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD ABRE_PARENTESES body_prop FECHA_PARENTESES KEYWORD_INDIVIDUALS acept_individual {quant_definida++;}
-	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD ABRE_PARENTESES body_prop param FECHA_PARENTESES {quant_definida++;}	//Classe Definida ok
+	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD ABRE_PARENTESES body_prop param FECHA_PARENTESES {quant_definida++;}	//Classe Definida
 	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD body_prop
-	 | KEYWORD_EQUIVALENTTO class_or_class	{quant_coberta++;}	//Classe Coberta ok
-	 | KEYWORD_SUBCLASSOF CLASS VIRGULA body_prop {quant_axioma_fechamento++;}	//Axioma de fechamento ok
+	 | KEYWORD_EQUIVALENTTO class_or_class	{quant_coberta++;}	//Classe Coberta
+	 | KEYWORD_SUBCLASSOF CLASS VIRGULA body_prop {quant_axioma_fechamento++;}	//Axioma de fechamento
 	 | KEYWORD_EQUIVALENTTO CLASS KEYWORD aux {quant_aninhada++;}	//Descrições Aninhadas
 	 | KEYWORD_SUBCLASSOF CLASS {quant_aninhada++;}
 	 | KEYWORD_EQUIVALENTTO class_or_class KEYWORD_SUBCLASSOF CLASS {quant_aninhada++;}
