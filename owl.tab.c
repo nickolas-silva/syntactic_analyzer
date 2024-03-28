@@ -1464,7 +1464,6 @@ void yyerror(const char * s)
 	extern char * yytext;   
 
 	error_count++;
-	system("clear");
 	cout << "\n";
     cout << "Erro de Sintaxe: *"<< yytext <<"*, linha " << yylineno << "\n";
 	

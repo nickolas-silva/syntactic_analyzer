@@ -1,0 +1,16 @@
+Class: RegulatoryActivity
+EquivalentTo: ValueActivity
+and ((bundles 
+        some (CnAObject or CoreObject or PoPObject)) or
+        (consumes some CnAObject))
+and ((grants some CnAObject) or
+        (transfers some 
+            (CoreObject or PoPObject)))
+and (isAuthorityOf some Regulator)
+and (hasTransaction some ValueTransaction)
+and (bundles only (CnAObject or CoreObject or PoPObject))
+and (consumes only CounterObject)
+and (grants only nAObject)
+and (isAuthorityOf some Regulator)
+and (transfers only
+        (oreObject or PoPObject))

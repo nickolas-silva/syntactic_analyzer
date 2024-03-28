@@ -10,7 +10,7 @@ EquivalentTo: Hot or Medium or Mild
 
 Class: CheesyPizza
 EquivalentTo:
-Pizza and (hasTopping some CheeseTopping)
+Pizza and hasTopping some CheeseTopping)
 Individuals:
 CheesyPizza1
 
@@ -26,7 +26,7 @@ Pizza and (hasCaloricContent some xsd:integer[>= 400])
 
 Class: Pizza
 SubClassOf:
-asBase some PizzaBase,
+hasBase some PizzaBase,
 hasCaloricContent some xsd:integer
 DisjointClasses:
 Pizza, PizzaBase, PizzaTopping
