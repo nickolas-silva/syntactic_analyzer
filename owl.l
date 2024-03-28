@@ -37,7 +37,7 @@ operators (">"|"<"|">="|"<=")
 
 stringcomposta  {maiusculas}({letra})+
 id              {stringcomposta}("_"?{stringcomposta})*
-prop            "ssn"|("is"{stringcomposta}*"Of")|({minusculas_sem_i}{minusculas_sem_s}{minusculas}*({stringcomposta})*)
+prop            "ssn"|("is"{stringcomposta}*"Of")|({minusculas}+({stringcomposta})*)
 individuo       {id}({numero}+)
 
 %%

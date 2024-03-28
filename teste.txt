@@ -10,7 +10,7 @@ EquivalentTo: Hot or Medium or Mild
 
 Class: CheesyPizza
 EquivalentTo:
-Pizza and hasTopping some CheeseTopping)
+Pizza and (hasTopping some CheeseTopping)
 Individuals:
 CheesyPizza1
 

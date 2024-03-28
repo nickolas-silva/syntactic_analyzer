@@ -1200,38 +1200,44 @@ yyreduce:
 #line 1201 "owl.tab.c"
     break;
 
+  case 10: /* body: KEYWORD_EQUIVALENTTO CLASS KEYWORD body_prop  */
+#line 35 "owl.y"
+                                                        {quant_definida++;}
+#line 1207 "owl.tab.c"
+    break;
+
   case 11: /* body: KEYWORD_EQUIVALENTTO class_or_class  */
 #line 36 "owl.y"
                                                 {quant_coberta++;}
-#line 1207 "owl.tab.c"
+#line 1213 "owl.tab.c"
     break;
 
   case 12: /* body: KEYWORD_SUBCLASSOF CLASS VIRGULA body_prop  */
 #line 37 "owl.y"
                                                       {quant_axioma_fechamento++;}
-#line 1213 "owl.tab.c"
+#line 1219 "owl.tab.c"
     break;
 
   case 13: /* body: KEYWORD_EQUIVALENTTO CLASS KEYWORD aux  */
 #line 38 "owl.y"
                                                   {quant_aninhada++;}
-#line 1219 "owl.tab.c"
+#line 1225 "owl.tab.c"
     break;
 
   case 14: /* body: KEYWORD_SUBCLASSOF CLASS  */
 #line 39 "owl.y"
                                     {quant_aninhada++;}
-#line 1225 "owl.tab.c"
+#line 1231 "owl.tab.c"
     break;
 
   case 15: /* body: KEYWORD_EQUIVALENTTO class_or_class KEYWORD_SUBCLASSOF CLASS  */
 #line 40 "owl.y"
                                                                         {quant_aninhada++;}
-#line 1231 "owl.tab.c"
+#line 1237 "owl.tab.c"
     break;
 
 
-#line 1235 "owl.tab.c"
+#line 1241 "owl.tab.c"
 
       default: break;
     }
@@ -1445,7 +1451,7 @@ int main(int argc, char ** argv)
 	}
 
 	yyparse();
-	cout << "\n";
+	cout << std::endl;
 	cout << "Erros Encontrados: \t"<< error_count<< "\n";
 	cout << "Classes Primitivas: \t" << quant_primitiva << "\n";
 	cout << "Classes Definidas: \t" << quant_definida << "\n";
